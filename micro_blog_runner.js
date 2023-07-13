@@ -43,6 +43,9 @@ console.log(shared_follows);
 const shared_follows_2 = micro_blog_follows.getSharedFollows(user_1, user_2);
 console.log(shared_follows_2);
 
+const similar_users = micro_blog_follows.getSimilarUsers(user_1, 1)
+console.log(similar_users);
+
 micro_blog.deleteUser(user_1);
 
 const empty_messages = micro_blog.getMessages(user_1);

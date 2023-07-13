@@ -23,6 +23,10 @@ const getSharedFollows = (name, other_name) => {
   return micro_blog_follows.getSharedFollows(name, other_name)
 }
 
+const getSimilarUsers = (name, min_similarity) => {
+  return micro_blog_follows.getSimilarUsers(name, min_similarity)
+}
+
 class MicroBlogFollows {
     #names;
     #follows;
@@ -75,8 +79,22 @@ class MicroBlogFollows {
           shared_follows.push(value.follow)
         }
       }
-      
+
       return shared_follows;
+    }
+
+    getSimilarUsers = (name, min_similarity) => {
+      let user_scores = []
+
+      for (let i = 0; i < this.names.length; i++) {
+        if (name !== this.names[i]) {
+          const shared_follow_amount = getSharedFollows(name, this.names[i]).length;
+          if (shared_follow_amount >= min_similarity) {
+            user_scores[this.names[i]] = shared_follow_amount;
+          }
+        }
+      }
+      return user_scores.sort((a, b) => a[1] - b[1]);
     }
 }
 
@@ -86,6 +104,7 @@ const micro_blog = {
   listFollows: listFollows,
   getMessagesFromFollows: getMessagesFromFollows,
   getSharedFollows: getSharedFollows,
+  getSimilarUsers: getSimilarUsers
 }
 
 export default micro_blog;
