@@ -66,11 +66,13 @@ const userList = micro_blog.getUsers();
 console.log(userList);
 
 star_rating.initialize(all_messages);
-star_rating.addRating(1, 5);
-star_rating.addRating(2, 3);
+star_rating.addRating(1, 1);
+star_rating.addRating(2, 2);
 star_rating.addRating(3, 2);
 star_rating.addRating(1, 2);
 star_rating.addRating(1, 1);
 star_rating.addRating(5, 1);
 console.log(star_rating.getRating(1));
-console.log(star_rating.getAllRatings(3));
+console.log(star_rating.getAllRatingsOver(3));
+
+console.log(star_rating.allRatings());
