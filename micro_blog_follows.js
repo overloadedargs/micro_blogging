@@ -43,7 +43,7 @@ class MicroBlogFollows {
     }
 
     // passing reference to micro_blog so we can look up meesages from all users
-    // reduces memory and storign all messages in two locations, can be removed
+    // reduces memory and storing all messages in two locations, can be removed
     // for db, axios or e.g. firebase
     getMessagesFromFollows = (name, micro_blog) => {
       let follow_messages = [];
