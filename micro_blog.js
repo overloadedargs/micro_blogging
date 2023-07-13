@@ -2,15 +2,27 @@
 // addMessage(name, message) // void
 // getMessages(name) // string[]
 // getAllMessages() // string[]
-let names = [];
+
+const users = {
+  names: [],
+  
+  get all() {
+    return this.names;
+  }
+};
+
 let messages = new Map();
 
 const addUser = (name) => {
-  names.push(name);
+  users.names.push(name);
 };
 
+const getUsers = () => {
+  return users.all;
+}
+
 const addMessage = (name, message) => {
-  const message_lister = new MessageListInitializer(messages)
+  const message_lister = new MessageListInitializer(messages);
   let messages_list = message_lister.messageList(name);
   messages_list.push(message);
   messages.set(name, messages_list);
@@ -38,6 +50,7 @@ class MessageListInitializer {
 
 const micro_blog = {
     addUser: addUser,
+    getUsers: getUsers,
     addMessage: addMessage,
     getMessages: getMessages,
     getAllMessages: getAllMessages
