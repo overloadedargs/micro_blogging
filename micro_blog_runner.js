@@ -28,12 +28,20 @@ micro_blog_follows.initialize(users);
 micro_blog_follows.addFollow(user_1, user_2);
 micro_blog_follows.addFollow(user_1, user_3);
 micro_blog_follows.addFollow(user_2, user_1);
+micro_blog_follows.addFollow(user_2, user_3);
+micro_blog_follows.addFollow(user_3, user_1);
 const follows = micro_blog_follows.listFollows();
 
 const follow_messages = micro_blog_follows.getMessagesFromFollows(user_1, micro_blog);
 
 console.log(follows);
 console.log(follow_messages);
+
+const shared_follows = micro_blog_follows.getSharedFollows(user_3, user_2);
+console.log(shared_follows);
+
+const shared_follows_2 = micro_blog_follows.getSharedFollows(user_1, user_2);
+console.log(shared_follows_2);
 
 micro_blog.deleteUser(user_1);
 
