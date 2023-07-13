@@ -1,9 +1,10 @@
 import micro_blog from "./micro_blog.js";
-import micro_blog_follows from './micro_blog_follows.js'
+import micro_blog_follows from './micro_blog_follows.js';
+import star_rating from './star_rating.js';
 
 const user_1 = 'Crawford';
 const user_2 = 'User2';
-const user_3 = 'User3'
+const user_3 = 'User3';
 
 micro_blog.addUser(user_1);
 micro_blog.addMessage(user_1, 'New Micro Blog');
@@ -63,3 +64,13 @@ console.log(user_2_messages);
 
 const userList = micro_blog.getUsers();
 console.log(userList);
+
+star_rating.initialize(all_messages);
+star_rating.addRating(1, 5);
+star_rating.addRating(2, 3);
+star_rating.addRating(3, 2);
+star_rating.addRating(1, 2);
+star_rating.addRating(1, 1);
+star_rating.addRating(5, 1);
+console.log(star_rating.getRating(1));
+console.log(star_rating.getAllRatings(3));
