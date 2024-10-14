@@ -75,12 +75,12 @@ class MessageListInitializer {
 }
 
 const micro_blog = {
-    addUser: addUser,
-    getUsers: getUsers,
-    deleteUser: deleteUser,
-    addMessage: addMessage,
-    getMessages: getMessages,
-    getAllMessages: getAllMessages
+    addUser,
+    getUsers,
+    deleteUser,
+    addMessage,
+    getMessages,
+    getAllMessages,
 }
 
 export default micro_blog;

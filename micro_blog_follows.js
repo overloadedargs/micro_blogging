@@ -99,12 +99,12 @@ class MicroBlogFollows {
 }
 
 const micro_blog = {
-  initialize: initialize,
-  addFollow: addFollow,
-  listFollows: listFollows,
-  getMessagesFromFollows: getMessagesFromFollows,
-  getSharedFollows: getSharedFollows,
-  getSimilarUsers: getSimilarUsers
+  initialize,
+  addFollow,
+  listFollows,
+  getMessagesFromFollows,
+  getSharedFollows,
+  getSimilarUsers
 }
 
 export default micro_blog;
