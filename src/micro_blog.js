@@ -46,6 +46,10 @@ const getAllMessages = () => {
   return [...messages.values()];
 };
 
+const deleteAllMessages = () => {
+  messages = new Map();
+}
+
 const removeMessages = (name) => {
   messages.delete(name);
 }
@@ -81,6 +85,7 @@ const micro_blog = {
     addMessage,
     getMessages,
     getAllMessages,
+    deleteAllMessages,
 }
 
 export default micro_blog;

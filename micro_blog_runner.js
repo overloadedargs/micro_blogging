@@ -1,6 +1,6 @@
-import micro_blog from "./micro_blog.js";
-import micro_blog_follows from './micro_blog_follows.js';
-import star_rating from './star_rating.js';
+import micro_blog from "./src/micro_blog.js";
+import micro_blog_follows from './src/micro_blog_follows.js';
+import star_rating from './src/star_rating.js';
 
 const user_1 = 'Crawford';
 const user_2 = 'User2';
