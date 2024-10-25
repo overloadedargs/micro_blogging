@@ -50,6 +50,16 @@ const deleteAllMessages = () => {
   messages = new Map();
 }
 
+const deleteAllUsers = () => {
+  users = {
+    names: [],
+  
+    get all() {
+      return this.names;
+    }
+  };
+}
+
 const removeMessages = (name) => {
   messages.delete(name);
 }
@@ -82,6 +92,7 @@ const micro_blog = {
     addUser,
     getUsers,
     deleteUser,
+    deleteAllUsers,
     addMessage,
     getMessages,
     getAllMessages,
